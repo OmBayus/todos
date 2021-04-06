@@ -1,15 +1,31 @@
 .addtodo {
-  @apply max-w-sm rounded overflow-hidden shadow-lg h-96 text-center text-indigo-600;
+  @apply max-w-sm 
+  rounded 
+  overflow-hidden 
+  shadow-lg 
+  h-96 
+  text-center 
+  text-indigo-600;
 }
 .addtodo h1 {
-  @apply text-xl font-bold pt-11;
-}
-.addCard {
-  @apply cursor-pointer mx-4;
+  @apply text-xl 
+  font-bold 
+  pt-11;
 }
 .addtodo div {
-  @apply flex items-center justify-center text-center h-3/4;
+  @apply flex 
+  items-center 
+  justify-center 
+  text-center 
+  h-3/4;
 }
 .addtodo input {
-  @apply border rounded mx-2 my-0.5 p-1;
+  @apply border 
+  rounded 
+  mx-2 my-0.5 
+  p-1;
+}
+.addCard {
+  @apply cursor-pointer 
+  mx-4;
 }

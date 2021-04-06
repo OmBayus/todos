@@ -1,12 +1,14 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import styles from './styles/todocard.module.css';
 import { FaTrash } from 'react-icons/fa';
 import { Context } from '../contexts/context';
 import uuid from 'react-uuid';
 import { AiFillEdit } from 'react-icons/ai';
-function TodoCard({ id, title, cardCategory, saved }) {
-  const { removeTodoCard, handleTitle, handleSave } = useContext(Context);
-  const [cardTodos, setCardTodos] = useState([]);
+function TodoCard({ id, title, cardCategory, saved, todos }) {
+  const { removeTodoCard, handleTitle, handleSave, addTodos } = useContext(
+    Context
+  );
+  const [cardTodos, setCardTodos] = useState(todos);
   const [saveCard, setSaveCard] = useState(saved);
   const [inputTodo, setInputTodo] = useState({
     todoId: '',
@@ -34,6 +36,11 @@ function TodoCard({ id, title, cardCategory, saved }) {
       completed: false,
     });
   };
+  useEffect(() => {
+    addTodos(id, cardTodos);
+    console.log('a');
+  }, [cardTodos]);
+
   const handleDelete = (todoId) => {
     const newCardTodos = cardTodos.filter((item) => item.todoId !== todoId);
     setCardTodos(newCardTodos);
@@ -178,7 +185,13 @@ function TodoCard({ id, title, cardCategory, saved }) {
                   placeholder="Add new Todo"
                   name="addtodo"
                 />
-                <button onSubmit={handleAddTodo}>Add Todo</button>
+                <button
+                  onSubmit={(e) => {
+                    handleAddTodo(e);
+                  }}
+                >
+                  Add Todo
+                </button>
               </form>
             </div>
           </div>

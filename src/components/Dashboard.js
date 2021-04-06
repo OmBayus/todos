@@ -51,6 +51,7 @@ const Dashboard = () => {
                     title={todocard.title}
                     cardCategory={todocard.category}
                     saved={todocard.saved}
+                    todos={todocard.todos}
                   />
                 );
               } else {
@@ -62,6 +63,7 @@ const Dashboard = () => {
                       title={todocard.title}
                       cardCategory={todocard.category}
                       saved={todocard.saved}
+                      todos={todocard.todos}
                     />
                   );
                 }

@@ -21,6 +21,7 @@ export const Provider = (props) => {
             id: uuid(),
             title: 'New Todo',
             saved: false,
+            todos: [],
           },
         ],
       });
@@ -32,6 +33,7 @@ export const Provider = (props) => {
             id: uuid(),
             title: 'New Todo',
             saved: false,
+            todos: [],
           },
         ],
       });
@@ -75,6 +77,7 @@ export const Provider = (props) => {
           id: todocard.id,
           title: newTitle,
           saved: todocard.saved,
+          todos: todocard.todos,
         };
         newTodoCards.push(newTodoCard);
       } else {
@@ -95,6 +98,7 @@ export const Provider = (props) => {
           id: todocard.id,
           title: todocard.title,
           saved: saveCard,
+          todos: todocard.todos,
         };
         newTodoCards.push(newTodoCard);
       } else {
@@ -105,7 +109,27 @@ export const Provider = (props) => {
       todocards: newTodoCards,
     });
   };
-
+  const addTodos = (id, cardTodos) => {
+    const newTodoCards = [];
+    items.todocards.forEach((todocard) => {
+      if (todocard.id === id) {
+        const newTodoCard = {
+          category: todocard.category,
+          id: todocard.id,
+          title: todocard.title,
+          saved: todocard.saved,
+          todos: cardTodos,
+        };
+        newTodoCards.push(newTodoCard);
+      } else {
+        newTodoCards.push(todocard);
+      }
+    });
+    setItems({
+      todocards: newTodoCards,
+    });
+  };
+  console.log(items);
   return (
     <Context.Provider
       value={{
@@ -117,6 +141,7 @@ export const Provider = (props) => {
         categories,
         handleTitle,
         handleSave,
+        addTodos,
       }}
     >
       {props.children}

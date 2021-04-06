@@ -109,7 +109,7 @@ export const Provider = (props) => {
       todocards: newTodoCards,
     });
   };
-  const addTodos = (id, cardTodos) => {
+  const updateTodos = (id, cardTodos) => {
     const newTodoCards = [];
     items.todocards.forEach((todocard) => {
       if (todocard.id === id) {
@@ -129,7 +129,7 @@ export const Provider = (props) => {
       todocards: newTodoCards,
     });
   };
-  console.log(items);
+
   return (
     <Context.Provider
       value={{
@@ -141,7 +141,7 @@ export const Provider = (props) => {
         categories,
         handleTitle,
         handleSave,
-        addTodos,
+        updateTodos,
       }}
     >
       {props.children}

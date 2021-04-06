@@ -5,7 +5,7 @@ import { Context } from '../contexts/context';
 import uuid from 'react-uuid';
 import { AiFillEdit } from 'react-icons/ai';
 function TodoCard({ id, title, cardCategory, saved, todos }) {
-  const { removeTodoCard, handleTitle, handleSave, addTodos } = useContext(
+  const { removeTodoCard, handleTitle, handleSave, updateTodos } = useContext(
     Context
   );
   const [cardTodos, setCardTodos] = useState(todos);
@@ -37,7 +37,7 @@ function TodoCard({ id, title, cardCategory, saved, todos }) {
     });
   };
   useEffect(() => {
-    addTodos(id, cardTodos);
+    updateTodos(id, cardTodos);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cardTodos]);
@@ -85,6 +85,7 @@ function TodoCard({ id, title, cardCategory, saved, todos }) {
     <div className={styles.todocard}>
       {saveCard ? (
         <>
+          <h2>Category : {cardCategory}</h2>
           <div>
             <div>
               <h2>{title}</h2>
@@ -152,6 +153,7 @@ function TodoCard({ id, title, cardCategory, saved, todos }) {
       ) : (
         <>
           <div>
+            <h2>Category : {cardCategory}</h2>
             <div>
               <input
                 type="text"

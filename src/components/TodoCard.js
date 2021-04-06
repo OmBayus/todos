@@ -38,7 +38,8 @@ function TodoCard({ id, title, cardCategory, saved, todos }) {
   };
   useEffect(() => {
     addTodos(id, cardTodos);
-    console.log('a');
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cardTodos]);
 
   const handleDelete = (todoId) => {

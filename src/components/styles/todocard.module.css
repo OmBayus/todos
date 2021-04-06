@@ -1,0 +1,53 @@
+.todocard {
+  position: relative;
+  @apply max-w-sm 
+    rounded 
+    overflow-scroll
+    text-center
+    shadow-lg 
+    h-96 py-2;
+}
+.todocard:hover .overlay {
+  opacity: 1;
+}
+.todocard input {
+  @apply border rounded mx-2 my-0.5 p-1 text-indigo-600;
+}
+.todocard button {
+  @apply bg-indigo-600 rounded p-1 text-white hover:bg-indigo-500 mx-0.5;
+}
+.todocard h2 {
+  @apply text-indigo-600 font-bold text-xl;
+}
+.iconBtn {
+  @apply border border-indigo-600 rounded ml-auto hover:bg-indigo-600 hover:text-white mx-3;
+}
+.todotext {
+  @apply mr-auto px-5 font-bold text-lg;
+}
+.todos {
+  @apply text-indigo-600 m-1;
+}
+.completed {
+  text-decoration: line-through;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: none;
+  transition: 0.5s ease;
+  @apply bg-indigo-600 flex
+  items-center justify-center;
+}
+.overlay button {
+  @apply bg-white text-indigo-600 px-2 hover:bg-gray-200 flex items-center m-1;
+}
+.overlayIcon {
+  @apply m-1;
+}

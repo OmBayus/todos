@@ -1,3 +1,6 @@
+button {
+  padding: 8px 16px;
+}
 .todocard {
   position: relative;
   @apply max-w-sm 
@@ -11,22 +14,23 @@
   opacity: 1;
 }
 .todocard input {
+  color: #000;
   @apply border 
   rounded 
   mx-2 my-0.5 
-  p-1 
-  text-indigo-600;
+  p-1;
 }
 .todocard button {
-  @apply bg-indigo-600 
-  rounded 
+  background-color: #ffec4f;
+  font-weight: 700;
+  color: #000;
+  @apply rounded 
   p-1 
-  text-white 
   hover:bg-indigo-500 mx-0.5;
 }
 .todocard h2 {
-  @apply text-indigo-600 
-  font-bold 
+  color: #000;
+  @apply font-bold 
   text-xl;
 }
 .iconBtn {
@@ -50,6 +54,7 @@
   text-decoration: line-through;
 }
 .overlay {
+  background-color: #ffec4f;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -60,14 +65,13 @@
   opacity: 0;
   visibility: none;
   transition: 0.5s ease;
-  @apply bg-indigo-600 
-  flex
+  @apply flex
   items-center 
   justify-center;
 }
 .overlay button {
+  color: #000;
   @apply bg-white 
-  text-indigo-600 
   px-2 
   hover:bg-gray-200 
   flex 

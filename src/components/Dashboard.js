@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import styles from './styles/dashboard.module.css';
-import profileicon from '../img/profileicon.png';
+import profileicon from '../img/todos.png';
 import { Context } from '../contexts/context';
 import AddCard from './AddCard';
 import TodoCard from './TodoCard';

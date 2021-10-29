@@ -1,11 +1,11 @@
 .addtodo {
+  background-color: #ffec4f;
   @apply max-w-sm 
   rounded 
   overflow-hidden 
   shadow-lg 
   h-96 
-  text-center 
-  text-indigo-600;
+  text-center;
 }
 .addtodo h1 {
   @apply text-xl 

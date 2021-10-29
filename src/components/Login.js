@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './styles/login.module.css';
+import logoSrc from '../img/todos.png';
 import { useHistory } from 'react-router-dom';
 const Login = () => {
   const history = useHistory();
@@ -19,6 +20,7 @@ const Login = () => {
 
   return (
     <div className={styles.loginPage}>
+      <img src={logoSrc} alt="" className={styles.logo} />
       <form className={styles.formSection} onSubmit={handleFormSubmit}>
         <div className={styles.inputs}>
           <label htmlFor="first_name" className={styles.labels}>

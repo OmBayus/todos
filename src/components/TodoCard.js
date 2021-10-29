@@ -1,13 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react';
 import styles from './styles/todocard.module.css';
-import { FaTrash } from 'react-icons/fa';
+import { FaTrash, FaPlus } from 'react-icons/fa';
+
 import { Context } from '../contexts/context';
 import uuid from 'react-uuid';
-import { AiFillEdit } from 'react-icons/ai';
+import { AiFillEdit, AiFillSave } from 'react-icons/ai';
 function TodoCard({ id, title, cardCategory, saved, todos }) {
-  const { removeTodoCard, handleTitle, handleSave, updateTodos } = useContext(
-    Context
-  );
+  const { removeTodoCard, handleTitle, handleSave, updateTodos } =
+    useContext(Context);
   const [cardTodos, setCardTodos] = useState(todos);
   const [saveCard, setSaveCard] = useState(saved);
   const [inputTodo, setInputTodo] = useState({
@@ -168,7 +168,7 @@ function TodoCard({ id, title, cardCategory, saved, todos }) {
                   handleTitle(id, todoTitle);
                 }}
               >
-                Save Title
+                <AiFillSave />
               </button>
               <button
                 onClick={(e) => {
@@ -193,7 +193,7 @@ function TodoCard({ id, title, cardCategory, saved, todos }) {
                     handleAddTodo(e);
                   }}
                 >
-                  Add Todo
+                  <FaPlus />
                 </button>
               </form>
             </div>

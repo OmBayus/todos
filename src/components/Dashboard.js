@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './styles/dashboard.module.css';
 import profileicon from '../img/todos.png';
 import { Context } from '../contexts/context';
@@ -7,11 +7,24 @@ import TodoCard from './TodoCard';
 import uuid from 'react-uuid';
 const Dashboard = () => {
   const nameSurname = localStorage.getItem('nameSurname');
-  const { items, categories } = useContext(Context);
+  const { items, categories,initTodo } = useContext(Context);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const handleChange = (e) => {
     setSelectedCategory(e.target.value);
   };
+
+  useEffect(()=>{
+    initTodo()
+    // eslint-disable-next-line
+  },[])
+
+  useEffect(()=>{
+    localStorage.setItem("items",JSON.stringify(items))
+  },[items])
+
+  useEffect(()=>{
+    localStorage.setItem("categories",JSON.stringify(categories))
+  },[categories])
 
   return (
     <div className={styles.dashboardContainer}>

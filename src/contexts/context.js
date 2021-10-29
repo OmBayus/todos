@@ -11,6 +11,15 @@ export const Provider = (props) => {
   const [category, setCategory] = useState('');
   const [categories, setCategories] = useState([]);
 
+  const initTodo = ()=>{
+    setItems(JSON.parse(localStorage.getItem('items')) || [
+      {
+        todocards: [],
+      },
+    ])
+    setCategories(JSON.parse(localStorage.getItem('categories')) || [])
+  }
+
   const addTodoCards = () => {
     if (items.todocards !== undefined) {
       setItems({
@@ -138,6 +147,7 @@ export const Provider = (props) => {
         removeTodoCard,
         category,
         setCategory,
+        initTodo,
         categories,
         handleTitle,
         handleSave,

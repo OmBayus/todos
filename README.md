@@ -1,6 +1,6 @@
-# Patika.dev Challenge
+# Todos
 
-This project is a todo app with cards which is made for Patika.dev Front-end Developer Challange. This project includes React with Context API, TailwindCSS, ReactRouter, React-Icons.
+This project is a todo app with cards. This project includes React with Context API, TailwindCSS, ReactRouter, React-Icons.
 
 ## Live Demo
 
